@@ -3,6 +3,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
+import postRoutes from './routes/posts.js';
 
 const app = express();
 const result = dotenv.config();
@@ -10,6 +11,8 @@ const result = dotenv.config();
 if (result.error) {
   throw result.error;
 }
+
+app.use('/posts', postRoutes);
 
 const parserOptions = { limit: "30mb", extended: true };
 app.use(express.json(parserOptions));
