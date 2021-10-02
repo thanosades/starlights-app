@@ -1,9 +1,9 @@
 import useStyles from './styles';
 
-export default function Form() {
+export default function Post() {
   const classes = useStyles();
   
   return (
-    <h1>Form</h1>
+    <h1>Post</h1>
   );
 }
