@@ -1,4 +1,6 @@
 import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
+import Posts from './components/Posts';
+import Form from './components/Form';
 import memories from './assets/img/memories.png';
 
 export default function App() {
