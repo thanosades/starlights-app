@@ -1,6 +1,9 @@
 import Post from './Post';
+import useStyles from './styles';
 
 export default function Posts() {
+  const classes = useStyles();
+  
   return (
     <>
       <h1>Posts</h1>
