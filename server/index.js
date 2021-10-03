@@ -1,8 +1,9 @@
 /* eslint-disable no-console */
-import express from "express";
-import mongoose from "mongoose";
-import cors from "cors";
-import dotenv from "dotenv";
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import bodyParser from 'body-parser';
 import postRoutes from './routes/posts.js';
 
 const app = express();
@@ -13,14 +14,16 @@ if (result.error) {
 }
 
 app.use(cors());
+
+const parserOptions = { extended: true };
+app.use(bodyParser.urlencoded(parserOptions));
+app.use(bodyParser.json());
 app.use('/posts', postRoutes);
 
-const parserOptions = { limit: "30mb", extended: true };
-app.use(express.json(parserOptions));
-app.use(express.urlencoded(parserOptions));
 
-const CONNECTION_URL = "mongodb+srv://" + process.env.DB_USER + ":"  + process.env.DB_PASS +
-  "@cluster0.hozzn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+
+const CONNECTION_URL = 'mongodb+srv://' + process.env.DB_USER + ':'  + process.env.DB_PASS +
+  '@cluster0.hozzn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 const PORT = process.env.PORT || 5000;
 
