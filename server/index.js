@@ -12,12 +12,12 @@ if (result.error) {
   throw result.error;
 }
 
+app.use(cors());
 app.use('/posts', postRoutes);
 
 const parserOptions = { limit: "30mb", extended: true };
 app.use(express.json(parserOptions));
 app.use(express.urlencoded(parserOptions));
-app.use(cors());
 
 const CONNECTION_URL = "mongodb+srv://" + process.env.DB_USER + ":"  + process.env.DB_PASS +
   "@cluster0.hozzn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
