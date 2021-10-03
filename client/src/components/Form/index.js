@@ -26,6 +26,19 @@ export default function Form() {
     setPostData({ ...postData, creator: e.target.value });
   };
 
+  const handleTitleChange = (e) => {
+    setPostData({ ...postData, title: e.target.value });
+  };
+
+  const handleMessageChange = (e) => {
+    setPostData({ ...postData, message: e.target.value });
+  };
+
+  const handleTagsChange = (e) => {
+    setPostData({ ...postData, tags: e.target.value });
+  };
+
+
   return (
     <Paper className={classes.paper}>
       <form
@@ -48,24 +61,24 @@ export default function Form() {
           variant="outlined"
           label="Title"
           fullWidth
-          value={postData.creator}
-          onChange={handleCreatorChange}
+          value={postData.title}
+          onChange={handleTitleChange}
         />
         <TextField
           name="message"
           variant="outlined"
           label="Message"
           fullWidth
-          value={postData.creator}
-          onChange={handleCreatorChange}
+          value={postData.message}
+          onChange={handleMessageChange}
         />
         <TextField
           name="tags"
           variant="outlined"
           label="Tags"
           fullWidth
-          value={postData.creator}
-          onChange={handleCreatorChange}
+          value={postData.tags}
+          onChange={handleTagsChange}
         />
         <div className={classes.fileInput}>
           <FileBase
