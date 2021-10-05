@@ -11,8 +11,7 @@ export const getPosts = async (req, res) => {
 
 export const createPost = async (req, res) => {
   const post = req.body;
-  post.tags = post.tags.split(',');
-  console.log(post);
+  post.tags = post.tags ? post.tags.split(',') : [];
   const newPost = new PostMessage(post);
   try {
     await newPost.save();

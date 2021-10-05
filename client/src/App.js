@@ -1,10 +1,9 @@
 import { useEffect } from 'react';
-import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
+import { Container, AppBar, Typography, Grow, Grid } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import Posts from './components/Posts';
 import { getPosts } from './actions/posts';
 import Form from './components/Form';
-import star from './assets/img/star.png';
 import useStyles from './styles';
 
 export default function App() {
@@ -19,7 +18,6 @@ export default function App() {
     <Container maxWidth="lg">
       <AppBar className={classes.appBar} position="static" color="inherit">
         <Typography className={classes.heading} variant="h2" align="center">Starlights</Typography>
-        <img className={classes.image} src={star} alt="star" height="60" width="60" />
       </AppBar>
       <Grow in>
         <Container>
