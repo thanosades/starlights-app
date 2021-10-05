@@ -15,12 +15,10 @@ if (result.error) {
 
 app.use(cors());
 
-const parserOptions = { extended: true };
+const parserOptions = { extended: true, limit: '50mb' };
 app.use(bodyParser.urlencoded(parserOptions));
-app.use(bodyParser.json());
+app.use(bodyParser.json(parserOptions));
 app.use('/posts', postRoutes);
-
-
 
 const CONNECTION_URL = 'mongodb+srv://' + process.env.DB_USER + ':'  + process.env.DB_PASS +
   '@cluster0.hozzn.mongodb.net/starlights-app?retryWrites=true&w=majority';
