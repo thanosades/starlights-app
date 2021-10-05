@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { TextField, Button, Typography, Paper } from '@mui/material';
-import FileBase from 'react-file-base64';
 import { useDispatch } from 'react-redux';
 import useStyles from './styles';
 import { createPost } from '../../actions/posts'
@@ -13,8 +12,8 @@ export default function Form() {
     tags: '',
     selectedFile: ''
   });
-  const dispatch = useDispatch();
 
+  const dispatch = useDispatch();
   const classes = useStyles();
 
   const clearForm = () => {
@@ -23,7 +22,6 @@ export default function Form() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     dispatch(createPost(postData));
   };
 
@@ -43,6 +41,14 @@ export default function Form() {
     setPostData({ ...postData, tags: e.target.value });
   };
 
+  const handleImageChange = (e) => {
+    setPostData({ 
+      ...postData, 
+      selectedFile: URL.createObjectURL(e.target.files[0])
+    })
+  }
+
+  console.log(postData);
 
   return (
     <Paper className={classes.paper}>
@@ -86,10 +92,10 @@ export default function Form() {
           onChange={handleTagsChange}
         />
         <div className={classes.fileInput}>
-          <FileBase
-            type="file"
-            multiple={false}
-            onDone={(base64) => setPostData({ ...postData, selectedFile: base64 })}
+          <input 
+            type="file" 
+            name="image"
+            onChange={handleImageChange} 
           />
         </div>
         <Button

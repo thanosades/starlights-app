@@ -11,7 +11,7 @@ export default function Posts() {
    posts.length === 0 
     ? <CircularProgress /> 
     : (
-      <Grid className={classes.container} container aignItems="stretch" spacing={3}>
+      <Grid className={classes.container} container alignItems="stretch" spacing={3}>
         {
           posts.map(post => (
             <Grid item xs={12} sm={6} key={post.id}>
