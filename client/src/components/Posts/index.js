@@ -8,7 +8,7 @@ export default function Posts() {
   const posts = useSelector((state) => state.posts);
   
   return (
-   !posts.length 
+   posts.length === 0 
     ? <CircularProgress /> 
     : (
       <Grid className={classes.container} container aignItems="stretch" spacing={3}>

@@ -1,9 +1,19 @@
+import { 
+  Card,
+  CardActions, 
+  CardContent, 
+  CardMedia, 
+  Button, 
+  Typography 
+} from '@mui/material';
 import dayjs from 'dayjs';
-import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@mui/material';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import DeleteIcon from '@mui/icons-material/Delete';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import useStyles from './styles';
+
+import relativeTime from 'dayjs/plugin/relativeTime';
+dayjs.extend(relativeTime);
 
 export default function Post({ post }) {
   const classes = useStyles();
@@ -17,7 +27,9 @@ export default function Post({ post }) {
       />
       <div className={classes.overlay}>
         <Typography variant="h6">{post.creator}</Typography>
-        <Typography variant="body2">{dayjs(post.createdAt).fromNow()}</Typography>
+        <Typography variant="body2">
+          {dayjs(post.createdAt).fromNow()}
+          </Typography>
       </div>
       <div className={classes.overlay2}>
         <Button style={{ color: 'white' }} size="small" onClick={() => { }}>
