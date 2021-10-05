@@ -21,11 +21,13 @@ export default function Form() {
 
   const clearForm = () => {
     setPostData(defaultData);
+    document.querySelector('input[type="file"]').value = '';
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(createPost(postData));
+    clearForm();
   };
 
   const handleCreatorChange = (e) => {
@@ -43,8 +45,6 @@ export default function Form() {
   const handleTagsChange = (e) => {
     setPostData({ ...postData, tags: e.target.value });
   };
-
-  console.log(postData.selectedFile);
 
   return (
     <Paper className={classes.paper}>
@@ -89,8 +89,8 @@ export default function Form() {
         />
         <div className={classes.fileInput}>
           <FileBase 
-            type="file" 
-            multiple={false} 
+            type="file"
+            multiple={false}
             onDone={({ base64 }) => 
               setPostData({ ...postData, selectedFile: base64 })} />
         </div>
