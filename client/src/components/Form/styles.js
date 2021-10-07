@@ -6,14 +6,12 @@ export default makeStyles((theme) => ({
   },
   form: {
     display: 'flex',
+    height: '420px',
     flexWrap: 'wrap',
     justifyContent: 'center',
+    alignItems: 'baseline'
   },
   fileInput: {
-    width: '97%',
-    margin: '10px 0',
-  },
-  buttonSubmit: {
-    marginBottom: 10,
-  },
+    width: '97%'
+  }
 }));
