@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Container, AppBar, Typography, Grow, Grid } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import Posts from './components/Posts';
@@ -7,6 +7,7 @@ import Form from './components/Form';
 import useStyles from './styles';
 
 export default function App() {
+  const [selectedId, setSelectedId] = useState(null);
   const classes = useStyles();
   const dispatch = useDispatch();
 
@@ -27,11 +28,11 @@ export default function App() {
             spacing={3}
           >
             <Grid item xs={12} sm={7}>
-              <Posts />
+              <Posts setSelectedId={setSelectedId} />
             </Grid>
 
             <Grid item xs={12} sm={4}>
-              <Form />
+              <Form selectedId={selectedId} setSelectedId={setSelectedId} />
             </Grid>
           </Grid>
         </Container>

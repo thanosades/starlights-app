@@ -15,7 +15,7 @@ import useStyles from './styles';
 import relativeTime from 'dayjs/plugin/relativeTime';
 dayjs.extend(relativeTime);
 
-export default function Post({ post }) {
+export default function Post({ post, setSelectedId }) {
   const classes = useStyles();
 
   return (
@@ -32,7 +32,10 @@ export default function Post({ post }) {
           </Typography>
       </div>
       <div className={classes.overlay2}>
-        <Button style={{ color: 'white' }} size="small" onClick={() => { }}>
+        <Button 
+          style={{ color: 'white' }} 
+          size="small" 
+          onClick={() => setSelectedId(post.id)}>
           <MoreHorizIcon fontSize="default" />
         </Button>
       </div>

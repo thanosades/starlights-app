@@ -3,7 +3,7 @@ import { Grid, Typography } from '@mui/material';
 import { useSelector } from 'react-redux';
 import useStyles from './styles';
 
-export default function Posts() {
+export default function Posts({ setSelectedId }) {
   const classes = useStyles();
   const posts = useSelector((state) => state.posts);
   
@@ -17,7 +17,7 @@ export default function Posts() {
           {
             posts.map(post => (
               <Grid item xs={12} sm={6} key={post.id}>
-                <Post post={post} />
+                <Post post={post} setSelectedId={setSelectedId} />
               </Grid>
             ))
           }

@@ -1,33 +1,45 @@
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { TextField, Button, Typography, Paper } from '@mui/material';
-import { useDispatch } from 'react-redux';
-import { createPost } from '../../actions/posts'
+import { useDispatch, useSelector } from 'react-redux';
+import { createPost, updatePost } from '../../actions/posts'
 import FileBase from 'react-file-base64';
 import useStyles from './styles';
 
-export default function Form() {
-  const defaultData = {
-    creator: '',
-    title: '',
-    message: '',
-    tags: '',
-    selectedFile: ''
-  };
+const defaultData = {
+  creator: '',
+  title: '',
+  message: '',
+  tags: '',
+  selectedFile: ''
+};
 
+export default function Form({ selectedId, setSelectedId }) {  
   const [postData, setPostData] = useState(defaultData);
-
+  const post = useSelector(state => 
+    selectedId !== null ? state.posts.find(post => post.id === selectedId) : null);
   const dispatch = useDispatch();
   const classes = useStyles();
 
-  const clearForm = () => {
+  const clearForm = useCallback(() => {
     setPostData(defaultData);
+    setSelectedId(null);
     document.querySelector('input[type="file"]').value = '';
-  };
+  }, [setSelectedId]);
+
+  useEffect(() => {
+    if (post) {
+      setPostData(post);
+    }
+  }, [post, clearForm]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createPost(postData));
-    clearForm();
+
+    if (selectedId) {
+      dispatch(updatePost(selectedId, postData));
+    } else {
+      dispatch(createPost(postData));
+    }
   };
 
   const handleCreatorChange = (e) => {
