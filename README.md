@@ -7,7 +7,7 @@ can like or delete them.
 You can find the React application within `client`
 and the Node application within `server`.
 
-The backend is deployed at https://starlights-app.herokuapp.com/
+The frontend can be found at https://friendly-williams-506bd5.netlify.app/ and the backend at https://starlights-app.herokuapp.com/
 
 ## Things I learned/practiced
 - JavaScript
