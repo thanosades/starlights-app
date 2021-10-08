@@ -19,6 +19,9 @@ const parserOptions = { extended: true, limit: '50mb' };
 app.use(bodyParser.urlencoded(parserOptions));
 app.use(bodyParser.json(parserOptions));
 app.use('/posts', postRoutes);
+app.get('/', (_, res) => {
+  res.send('Welcome to starlights API');
+})
 
 const CONNECTION_URL = 'mongodb+srv://' + process.env.DB_USER + ':'  + process.env.DB_PASS +
   '@cluster0.hozzn.mongodb.net/starlights-app?retryWrites=true&w=majority';
