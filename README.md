@@ -1,20 +1,23 @@
 # Starlights
 
-A fullstack MERN application where the user can add
+A MERN SPA where the user can add
 their favorite moments from their life and others
 can like or delete them.
 
 You can find the React application within `client`
 and the Node application within `server`.
 
-The frontend can be found at https://friendly-williams-506bd5.netlify.app/ and the backend at https://starlights-app.herokuapp.com/
+## Installation instructions
+Run `npm install` from inside both `client` and `server` folders.
+
 
 ## Things I learned/practiced
 - JavaScript
 - React
+- Redux
+- Material UI 5
 - Node/Express
 - Debugging React and Node applications using VS Code
 - Handling database authentication
 - REST
 - MongoDB (via mongoose)
-- Styling with Material UI (MUI)
