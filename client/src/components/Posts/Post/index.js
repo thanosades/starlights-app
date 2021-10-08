@@ -58,7 +58,7 @@ export default function Post({ post, setSelectedId }) {
           {post.title}
         </Typography>
       <CardContent>
-        <Typography variant="subtitle1" gutterBottom>
+        <Typography variant="body2" color="textPrimary" component="p">
           {post.message}
         </Typography>
       </CardContent>
