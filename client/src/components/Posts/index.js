@@ -10,7 +10,7 @@ export default function Posts({ setSelectedId }) {
    <>
     {
       posts.length === 0 
-      ? <Typography variant="h6">No posts found. Start adding by using the form.</Typography>
+      ? <Typography variant="h5" color="white">No posts found. Start adding by using the form.</Typography>
       : (
         <Grid className={classes.container} container alignItems="stretch" spacing={3}>
           {
