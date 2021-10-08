@@ -1,3 +1,5 @@
+import { useDispatch } from 'react-redux';
+import { deletePost } from '../../../actions/posts';
 import { 
   Card,
   CardActions, 
@@ -17,6 +19,14 @@ dayjs.extend(relativeTime);
 
 export default function Post({ post, setSelectedId }) {
   const classes = useStyles();
+  const dispatch = useDispatch();
+
+  const confirmPostDeletion = () => {
+    const userResponse = window.confirm('Would you like to delete this?');
+    if (userResponse) {
+      dispatch(deletePost(post.id))
+    }
+  }
 
   return (
     <Card className={classes.card}>
@@ -56,7 +66,11 @@ export default function Post({ post, setSelectedId }) {
         <Button size="small" color="primary" onClick={() => {}}>
           <ThumbUpAltIcon fontSize="small" />Like {post.likeCount}
         </Button>
-        <Button size="small" color="primary" onClick={() => {}}>
+        <Button 
+          size="small" 
+          color="primary" 
+          onClick={confirmPostDeletion}
+        >
           <DeleteIcon fontSize="small" />Delete</Button>
       </CardActions>
     </Card>
