@@ -6,7 +6,6 @@ import useStyles from './styles';
 export default function Posts({ setSelectedId }) {
   const classes = useStyles();
   const posts = useSelector((state) => state.posts);
-  
   return (
    <>
     {
