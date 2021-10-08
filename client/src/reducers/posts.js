@@ -8,6 +8,8 @@ const reducer = (state = [], action) => {
       const updatedPost = action.payload;
       return state.map(post => 
         post.id === updatedPost.id ? updatedPost : post);
+    case 'DELETE':
+      return state.filter(post => post.id !== action.payload);
     default:
       return state;
   }
