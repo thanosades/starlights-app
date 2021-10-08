@@ -44,8 +44,11 @@ export default function Post({ post, setSelectedId }) {
           {post.tags.map(tag => ` #${tag}`)}
         </Typography>
       </div>
+      <Typography className={classes.title} variant="h5" gutterBottom>
+          {post.title}
+        </Typography>
       <CardContent>
-        <Typography className={classes.title} variant="h5" gutterBottom>
+        <Typography variant="subtitle1" gutterBottom>
           {post.message}
         </Typography>
       </CardContent>

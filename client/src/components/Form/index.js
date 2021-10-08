@@ -40,6 +40,7 @@ export default function Form({ selectedId, setSelectedId }) {
     } else {
       dispatch(createPost(postData));
     }
+    clearForm();
   };
 
   const handleCreatorChange = (e) => {
@@ -66,7 +67,7 @@ export default function Form({ selectedId, setSelectedId }) {
         className={`${classes.root} ${classes.form}`}
         onSubmit={handleSubmit}
       >
-        <Typography variant="h6">Add A Highlight</Typography>
+        <Typography variant="h6">{selectedId ? 'Edit your' : 'Add A'} Highlight</Typography>
         <TextField
           name="creator"
           variant="outlined"

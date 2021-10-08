@@ -33,6 +33,6 @@ export const updatePost = async (req, res) => {
   }
 
   const { id: bodyId, ...updatedPost } = req.body;
-  await PostMessage.findByIdAndUpdate(id, updatedPost, { new: true });
-  res.json(updatedPost);
+  const post = await PostMessage.findByIdAndUpdate(id, updatedPost, { new: true });
+  res.json(post);
 }

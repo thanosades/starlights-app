@@ -13,7 +13,7 @@ export default function App() {
 
   useEffect(() => {
     dispatch(getPosts());
-  }, [dispatch]);
+  }, [selectedId, dispatch]);
 
   return (
     <Container maxWidth="lg">
