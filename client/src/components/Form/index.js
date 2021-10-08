@@ -56,7 +56,7 @@ export default function Form({ selectedId, setSelectedId }) {
   };
 
   const handleTagsChange = (e) => {
-    setPostData({ ...postData, tags: e.target.value });
+    setPostData({ ...postData, tags: e.target.value.split(',') });
   };
 
   return (

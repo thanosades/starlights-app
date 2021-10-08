@@ -64,7 +64,7 @@ export default function Post({ post, setSelectedId }) {
       </CardContent>
       <CardActions className={classes.cardActions}>
         <Button size="small" color="primary" onClick={() => dispatch(likePost(post.id))}>
-          <ThumbUpAltIcon fontSize="small" />Like {post.likeCount}
+          <ThumbUpAltIcon fontSize="small" />Likes {post.likeCount}
         </Button>
         <Button 
           size="small" 
