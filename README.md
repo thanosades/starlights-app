@@ -7,6 +7,8 @@ can like or delete them.
 You can find the React application within `client`
 and the Node application within `server`.
 
+The backend is deployed at https://starlights-app.herokuapp.com/
+
 ## Things I learned/practiced
 - JavaScript
 - React
