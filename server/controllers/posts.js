@@ -50,3 +50,15 @@ export const deletePost = async (req, res) => {
 
   res.status(200).end();
 }
+
+export const likePost = async (req, res) => {
+  const { id } = req.params;
+  if (!checkForValidId(id)) {
+    return res.status(404).json({ message: 'Not found' });
+  }
+
+  const post = await PostMessage.findById(id);
+  post.likeCount += 1;
+  const likedPost = await PostMessage.findByIdAndUpdate(id, post, { new: true });
+  res.json(likedPost);
+}
