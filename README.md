@@ -20,4 +20,4 @@ Run `npm install` from inside both `client` and `server` folders.
 - Debugging React and Node applications using VS Code
 - Handling database authentication
 - REST
-- MongoDB (via mongoose)
+- MongoDB
