@@ -1,15 +1,17 @@
 # Starlights
 
+Demo [here](https://friendly-williams-506bd5.netlify.app/)
+
+## Description
 A MERN SPA where the user can add
 their favorite moments from their life and others
 can like or delete them.
 
-You can find the React application within `client`
-and the Node application within `server`.
+This is a monorepo, the `client` folder contains the React project
+and the `server` folder contains the Node/Express project.
 
 ## Installation instructions
 Run `npm install` from inside both `client` and `server` folders.
-
 
 ## Things I learned/practiced
 - JavaScript
