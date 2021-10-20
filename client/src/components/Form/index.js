@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { TextField, Button, Typography, Paper } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
-import { createPost, updatePost } from '../../actions/posts'
+import { createPost, updatePost } from '../../features/posts/postsSlice';
 import FileBase from 'react-file-base64';
 import useStyles from './styles';
 
@@ -16,7 +16,7 @@ const defaultData = {
 export default function Form({ selectedId, setSelectedId }) {  
   const [postData, setPostData] = useState(defaultData);
   const post = useSelector(state => 
-    selectedId !== null ? state.posts.find(post => post.id === selectedId) : null);
+    selectedId !== null ? state.posts.current.find(post => post.id === selectedId) : null);
   const dispatch = useDispatch();
   const classes = useStyles();
 
