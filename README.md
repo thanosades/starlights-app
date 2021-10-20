@@ -1,6 +1,6 @@
 # Starlights
 
-Demo [here](https://friendly-williams-506bd5.netlify.app/).
+Demo [here](https://naughty-panini-63decd.netlify.app/).
 
 ## Description
 A MERN SPA where the user can add
