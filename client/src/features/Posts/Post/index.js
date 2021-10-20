@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { deletePost, likePost } from '../../../actions/posts';
+import { removePost, likePost } from '../postsSlice';
 import { 
   Card,
   CardActions, 
@@ -24,7 +24,7 @@ export default function Post({ post, setSelectedId }) {
   const confirmPostDeletion = () => {
     const userResponse = window.confirm('Would you like to delete this?');
     if (userResponse) {
-      dispatch(deletePost(post.id))
+      dispatch(removePost(post.id))
     }
   }
 
