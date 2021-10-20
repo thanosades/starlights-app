@@ -2,7 +2,7 @@ import Post from './Post';
 import { useSelector } from 'react-redux';
 import { Grid, Typography } from '@mui/material';
 import useStyles from './styles';
-import { selectPosts } from '../../features/posts/postsSlice';
+import { selectPosts } from './postsSlice';
 export default function Posts({ setSelectedId }) {
   const classes = useStyles();
   const posts = useSelector(selectPosts);

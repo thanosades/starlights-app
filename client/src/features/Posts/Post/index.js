@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { removePost, likePost } from '../../../features/posts/postsSlice';
+import { removePost, likePost } from '../postsSlice';
 import { 
   Card,
   CardActions, 
