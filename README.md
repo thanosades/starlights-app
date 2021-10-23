@@ -3,9 +3,9 @@
 Demo [here](https://naughty-panini-63decd.netlify.app/).
 
 ## Description
-A MERN SPA where the user can add
-their favorite moments from their life and others
-can like or delete them.
+A MERN application in which the user can add
+their favorite moments from their life. Features "like" and "delete"
+functionality for every post.
 
 This is a monorepo, the `client` folder contains the React project
 and the `server` folder contains the Node/Express project.
