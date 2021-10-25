@@ -3,7 +3,7 @@
 Demo [here](https://naughty-panini-63decd.netlify.app/).
 
 ## Description
-A MERN application in which the user can add
+Monorepo for Starlights, A MERN application in which the user can add
 their favorite moments from their life. Features "like" and "delete"
 functionality for every post.
 
