@@ -73,6 +73,7 @@ export default function Form({ selectedId, setSelectedId }) {
           variant="outlined"
           label="Creator"
           fullWidth
+          required
           value={postData.creator}
           onChange={handleCreatorChange}
         />
@@ -81,6 +82,7 @@ export default function Form({ selectedId, setSelectedId }) {
           variant="outlined"
           label="Title"
           fullWidth
+          required
           value={postData.title}
           onChange={handleTitleChange}
         />
@@ -89,6 +91,7 @@ export default function Form({ selectedId, setSelectedId }) {
           variant="outlined"
           label="Message"
           fullWidth
+          required
           value={postData.message}
           onChange={handleMessageChange}
         />
