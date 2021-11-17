@@ -6,6 +6,9 @@ export default makeStyles({
     paddingTop: '56.25%',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     backgroundBlendMode: 'darken',
+    '&:hover': {
+      backgroundBlendMode: 'normal'
+    }
   },
   border: {
     border: 'solid',
