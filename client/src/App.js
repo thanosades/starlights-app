@@ -18,7 +18,7 @@ export default function App() {
   return (
     <Container maxWidth="lg">
       <AppBar className={classes.appBar} position="static" color="inherit">
-        <Typography className={classes.heading} variant="h2" align="center">Starlights</Typography>
+        <Typography className={classes.heading} component="h1" variant="h2" align="center">🌟 Starlights 🌟</Typography>
       </AppBar>
       <Grow in>
         <Container>
