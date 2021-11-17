@@ -1,6 +1,6 @@
 import Post from './Post';
 import { useSelector } from 'react-redux';
-import { Grid, Typography } from '@mui/material';
+import { Grid, CircularProgress } from '@mui/material';
 import useStyles from './styles';
 import { selectPosts } from './postsSlice';
 export default function Posts({ setSelectedId }) {
@@ -11,7 +11,7 @@ export default function Posts({ setSelectedId }) {
    <>
     {
       posts.length === 0 
-      ? <Typography variant="h5" color="white">No posts found. Start adding by using the form.</Typography>
+      ? <CircularProgress />
       : (
         <Grid className={classes.container} container alignItems="stretch" spacing={3}>
           {
