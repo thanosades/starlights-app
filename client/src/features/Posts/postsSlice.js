@@ -32,7 +32,7 @@ export const getPosts = () => async (dispatch) => {
     const { data } = await api.fetchPosts();
     dispatch(get(data));
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }
 
@@ -41,7 +41,7 @@ export const createPost = (post) => async (dispatch) => {
     const { data } = await api.createPost(post);
     dispatch(create(data));
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }
 
@@ -50,7 +50,7 @@ export const updatePost = (id, post) => async (dispatch) => {
     const { data } = await api.updatePost(id, post);
     dispatch(update(data));
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }
 
@@ -59,7 +59,7 @@ export const removePost = (id) => async (dispatch) => {
     await api.deletePost(id);
     dispatch(remove(id));
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }
 
@@ -68,7 +68,7 @@ export const likePost = (id) => async (dispatch) => {
     const { data } = await api.likePost(id);
     dispatch(update(data));
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 }
 
