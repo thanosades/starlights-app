@@ -1,12 +1,12 @@
 import { useDispatch } from 'react-redux';
 import { removePost, likePost } from '../postsSlice';
-import { 
+import {
   Card,
-  CardActions, 
-  CardContent, 
-  CardMedia, 
-  Button, 
-  Typography 
+  CardActions,
+  CardContent,
+  CardMedia,
+  Button,
+  Typography
 } from '@mui/material';
 import dayjs from 'dayjs';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
@@ -26,7 +26,7 @@ export default function Post({ post, setSelectedId }) {
     if (userResponse) {
       dispatch(removePost(post.id))
     }
-  }
+  };
 
   return (
     <Card className={classes.card}>
@@ -39,12 +39,12 @@ export default function Post({ post, setSelectedId }) {
         <Typography variant="h6">{post.creator}</Typography>
         <Typography variant="body2">
           {dayjs(post.createdAt).fromNow()}
-          </Typography>
+        </Typography>
       </div>
       <div className={classes.overlay2}>
-        <Button 
-          style={{ color: 'white' }} 
-          size="small" 
+        <Button
+          style={{ color: 'white' }}
+          size="small"
           onClick={() => setSelectedId(post.id)}>
           <MoreHorizIcon fontSize="default" />
         </Button>
@@ -55,8 +55,8 @@ export default function Post({ post, setSelectedId }) {
         </Typography>
       </div>
       <Typography className={classes.title} variant="h5" gutterBottom>
-          {post.title}
-        </Typography>
+        {post.title}
+      </Typography>
       <CardContent>
         <Typography variant="body2" color="textPrimary" component="p">
           {post.message}
@@ -66,9 +66,9 @@ export default function Post({ post, setSelectedId }) {
         <Button size="small" color="primary" onClick={() => dispatch(likePost(post.id))}>
           <ThumbUpAltIcon fontSize="small" />Likes {post.likeCount}
         </Button>
-        <Button 
-          size="small" 
-          color="primary" 
+        <Button
+          size="small"
+          color="primary"
           onClick={confirmPostDeletion}
         >
           <DeleteIcon fontSize="small" />Delete</Button>
