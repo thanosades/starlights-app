@@ -22,7 +22,6 @@ export default function App() {
           className={classes.heading} 
           component="h1" variant="h2" 
           align="center"
-          gutterBottom={true}
         >🌟 Starlights 🌟</Typography>
       </AppBar>
       <Grow in>
