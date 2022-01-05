@@ -10,6 +10,8 @@ functionality for every post.
 This is a monorepo, the `client` folder contains the React project
 and the `server` folder contains the Node/Express project.
 
+This project is incomplete and abandoned until further notice.
+
 ## Installation instructions
 Run `npm install` from inside both `client` and `server` folders.
 
